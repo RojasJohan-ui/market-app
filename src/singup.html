@@ -8,37 +8,40 @@
 </head>
 <body >
   <center><h1>Register</h1></center>
+  <form name="register-form" action ="singnup.php" method ="post">
   <table border ="1" align="center">
-<tr><td><label>Firstname:</label></td></tr>
-<tr><td><input type="text"></td></tr>
-</table>
+   <tr><td><label>Firstname:</label></td></tr>
+   <tr><td><input type="text" name="fname" required></td></tr>
+   </table>
  
- <table border ="1" align="center">
+  <table border ="1" align="center">
   <tr><td><label>Lastname:</label></td></tr>
-  <tr><td><input type="text"></td></tr>
-</table>
+  <tr><td><input type="text"name=lname required></td></tr>
+  </table>
 
- <table border ="1" align="center">
+  <table border ="1" align="center">
   <tr><td><label>Movile number:</label></td></tr>
-  <tr><td><input type="number"></td></tr>
- </table>
+  <tr><td><input type="number"name=mnumber required></td></tr>
+  </table>
 
  <table border ="1" align="center">
   <tr><td><label>Identification number</label></td></tr>
-  <tr><td><input type="number"></td></tr>
- </table>
+  <tr><td><input type="number" name=idnumber required></td></tr>
+  </table>
 
-<table border ="1" align="center">
+  <table border ="1" align="center">
   <tr><td><label>Email:</label></td></tr>
-  <tr><td><input type ="email"></td></tr>
-</table>
+  <tr><td><input type ="email" name = email required></td></tr>
+  </table>
 
- <table border ="1" align="center">
+  <table border ="1" align="center">
   <tr><td><label>Password:</label></td></tr>
-  <tr><td><input type ="password"></td></tr>
- </table>
+  <tr><td><input type ="password"name=password required></td></tr>
+  </table>
 
- <table border ="1" align="center">
+  <table border ="1" align="center">
   <tr><td><button>Register</button></td></tr><br>
- </table>
+  </table>
+</form>
+</body>
 </html>

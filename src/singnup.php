@@ -11,6 +11,21 @@
 
 
  $enc_pass = password_hash($p_wd, PASSWORD_DEFAULT);
+
+ $check_email = "
+    SELECT
+         u.email
+    FROM 
+         users u    
+    WHERE 
+         email = '$e_mail' 
+     LIMIT 1
+ ";
+ $res_check =  pg_query($connection, $check_email);
+if (pg_num_rows($res_check)>0){
+   echo"<script>alert('User already exits !!')</script>";
+   hearder ('refresh:0;url=singup.html');
+} else {
  //step 3create query to insert into
  $query="
  INSERT INTO users (
@@ -29,10 +44,14 @@
  $res = pg_query($connection, $query);
  //step 5 valide result
  if($res){
-    echo "users has been created successfuly !!!";
+    //echo "users has been created successfuly !!!";
+    echo "<script>alert('Success !!! Go to login')</script>";+
+    header ('refresh:0;url=singup.html');
  }else {
     echo "something wrong";
  }
+
+}
 
  ?>
  
