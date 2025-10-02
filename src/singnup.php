@@ -2,16 +2,16 @@
      //step 1. get data base connection
      require('../config/database.php');
      //step2. get forms database 
-     $f_name    = $_POST['fname'];
-     $l_name    = $_POST['lname'];
-     $m_number  = $_POST['mnumber'];
-     $id_number = $_POST['idnumber'];
-     $e_mail    = $_POST['email'];
-     $p_wd      = $_POST['password'];
+     $f_name    = trim ($_POST['fname']);
+     $l_name    = trim ($_POST['lname']);
+     $m_number  = trim($_POST['mnumber']);
+     $id_number = trim($_POST['idnumber']);
+     $e_mail    = trim($_POST['email']);
+     $p_wd      = trim($_POST['password']);
 
 
      //$enc_pass = password_hash($p_wd, PASSWORD_DEFAULT);
-     $enc_pass =md5+($p_wd);
+     $enc_pass =md5($p_wd);
 
      $check_email = "
      SELECT
@@ -27,7 +27,8 @@
 
      if (pg_num_rows($res_check) > 0){
           echo"<script>alert('User already exits !!')</script>";
-          header('refresh:0;url=singup.html');
+          //header('refresh:0;url=singup.html');
+          header('refresh:0;url=signin.php');
      } else {
           //step 3create query to insert into
           $query="
