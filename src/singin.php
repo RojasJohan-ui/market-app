@@ -22,7 +22,7 @@
     limit 1	 ";
 
 //step 4 execute query
-     $res_check =  pg_query($connection, $sql_check_user);
+     $res_check =  pg_query($connection_supa, $sql_check_user);
      if (pg_num_rows($res_check) > 0){
           echo"User exist. Go to main page!!!";+
           header('refresh:0;url=main.php');

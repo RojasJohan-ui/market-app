@@ -23,7 +23,7 @@
           LIMIT 1
      ";
 
-     $res_check =  pg_query($connection, $check_email);
+     $res_check =  pg_query($connection_supa, $check_email);
 
      if (pg_num_rows($res_check) > 0){
           echo"<script>alert('User already exits !!')</script>";
@@ -44,7 +44,7 @@
           )";
 
           //step 4 Execute query
-          $res = pg_query($connection, $query);
+          $res = pg_query($connection_supa, $query);
           //step 5 valide result
           if($res){
                //echo "users has been created successfuly !!!";
