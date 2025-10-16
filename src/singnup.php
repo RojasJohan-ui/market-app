@@ -41,7 +41,8 @@
                password
           ) VALUES (
                '$f_name', '$l_name', '$m_number', '$id_number', '$e_mail', '$enc_pass'
-          )";
+          )
+               ";
 
           //step 4 Execute query
           $res = pg_query($connection_supa, $query);
