@@ -1,40 +1,53 @@
 <?php
-//Database conection to superbase
-//$supa_host     = "aws-1-us-east-1.pooler.supabase.com"; 
-//$supa_user     = "postgres.mfwmttymxnbihuckgizu";
-//$supa_dbname   = "postgres";
-//$supa_password = "unicesmag@@";
-//$supa_port     = "6543";
+    //Database connection to Supabase
+    $supa_host       = "aws-1-us-east-1.pooler.supabase.com";
+    $supa_user       = "postgres.mnbzuahtlrkgfdyynjbs";
+    $supa_password   = "unicesmag@@";
+    $supa_dbname     = "postgres";
+    $supa_port       = "6543";
 
-//Database conection to local service
-$local_host     = "127.0.0.1"; //127.0.0.1
-$local_user     = "postgres";
-$local_dbname   = "marketapp";
-$local_password = "unicesmag";
-$local_port     = "5432";
+    //Database connection to local server
+    $local_host       =   "127.0.0.1"; //127.0.0.1
+    $local_user       =   "postgres";
+    $local_password   =   "unicesmag";
+    $local_dbname     =   "marketapp";
+    $local_port       =   "5432";
 
-//supa_data_connection = "
-     #host=$supa_host
-     #user=$supa_user
-     #dbname=$supa_dbname
-     #password=$supa_password
-     #port=$supa_port
-#";
+    //data con creenciales para conectarse
+    $supa_data_connection = "
+        host=$supa_host
+        user=$supa_user
+        password=$supa_password
+        dbname=$supa_dbname
+        port=$supa_port
+    ";
 
-$local_data_connection = "
-     host=$local_host
-     user=$local_user
-     dbname=$local_dbname
-     password=$local_password
-     port=$local_port
-";
+    $local_data_connection = "
+        host=$local_host
+        user=$local_user
+        password=$local_password
+        dbname=$local_dbname
+        port=$local_port
+    ";
 
-//$connection_supa = pg_connect($supa_data_connection);
-$connection_local = pg_connect($local_data_connection);
-if($connection_local){
-  echo"Error";  
-}
+    //conexion
+    //$conn_supa = pg_connect($supa_data_connection);
+    $conn_local = pg_connect($local_data_connection);
 
-else{echo"Connection successfully :::";}
-   
+ 
+    //comprobar conexion
+    if(!$conn_local){
+        echo "Error: " . pg_last_error(); //para que muestre el ultimo error
+    }else{
+       echo "Connetion successfully !!!";
+    }
+
+    /*
+    if(!$conn_supa){
+        echo "Error: " . pg_last_error(); //para que muestre el ultimo error
+    }else{
+        echo "Connetion successfully !!!";
+    }
+        */
+
 ?>
