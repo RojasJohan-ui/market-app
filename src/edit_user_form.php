@@ -13,7 +13,7 @@
     }
 
     while ($row = pg_fetch_assoc($result)){
-        $ide_number = $row ['ide_number'];
+        $id_number = $row ['id_number'];
         $fname = $row ['firstname'];
         $lname = $row ['lastname'];
        
@@ -29,7 +29,7 @@
 </head>
 <body>
     <center>
-    <form name ="edit-user-form" action ="update_user.php" method ="post"
+    <form name ="edit-user-form" action ="update_user.php" method ="post">
 
         <input
             type="hidden"
@@ -37,12 +37,12 @@
             value="<?php echo $user_id?>"
             readonly
             required /><br><br>
-
-        <label>Identification number: </label>
+       
+         <label>Identification number: </label>
         <input
             type="text"
             name="idenumber"
-            value="<?php echo $ide_number?>"
+            value="<?php echo $id_number?>"
             readonly
             required /><br><br>
 
