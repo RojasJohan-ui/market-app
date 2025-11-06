@@ -8,8 +8,9 @@
      if(isset($_SESSION['session_user_id'])){
          header('refresh:0;url=main.php');
      }else{
-        header('refresh:0;url=error_403.hmtl')
+         header('refresh:0;url=error_403.html');
      }
+
      //step2. get forms database 
      $e_mail    = trim ($_POST['email']);
      $p_wd      = trim($_POST['password']);
@@ -32,10 +33,10 @@
     limit 1	 ";
 
 //step 4 execute query
-     $res_check =  pg_query($connection_supa, $sql_check_user);
-     $row = pg_fetch_assoc($res_check)
-     $_SESSION['session_user_id'] = row['id'];
-    $_SESSION['session_user_fullname'] = row['fullname'];
+     $res_check =  pg_query($conn_local, $sql_check_user);
+     $row = pg_fetch_assoc($res_check);
+     $_SESSION['session_users_id'] = $row['id'];
+     $_SESSION['session_users_fullname'] = $row['fullname'];
 
 
 

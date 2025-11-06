@@ -18,6 +18,7 @@ echo "Welcome to main !!";
 </head>
 <body>
     <center><b>User:</b>Here print your name</center>
+    <?php echo $_SESSION ['session_user_fullname'];?></center>
     <a href="list_user.php">List all users</a>
     <a href="logout.php">Logout</a> 
 </body>
